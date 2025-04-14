@@ -19,5 +19,19 @@ iUserInput = int(input("If you want to import data, enter 1. If you want to see 
 
 if iUserInput == 1 :
     dfRaw = pd.read_excel("Retail_Sales_Data.xlsx")
+
+
+if iUserInput == 2:
+    #Print
+    print("The following are all the categories that have been sold:"
+    # the counter to go up, as well as the list of categories already printed
+    category_counter = 0
+    the_categories = []
+    #looping through each row, checking if the category has been printed, if not, then we print and update the counter
+    for category in df["Category"]:
+        if category not in the_categories:
+            category_counter += 1
+            the_categories.append(category)
+            print(f" {category_counter}: {category}"
     
     
