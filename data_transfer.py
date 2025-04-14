@@ -22,12 +22,14 @@ if iUserInput == 1 :
 
 
 if iUserInput == 2:
-    #Print
+    # Print the statement
     print("The following are all the categories that have been sold:"
-    # the counter to go up, as well as the list of categories already printed
+    
+    # The counter to go up, as well as the list of categories already printed
     category_counter = 0
     the_categories = []
-    #looping through each row, checking if the category has been printed, if not, then we print and update the counter
+    
+    # Looping through each row, checking if the category has been printed, if not, then we print and update the counter
     for category in df["Category"]:
         if category not in the_categories:
             category_counter += 1
