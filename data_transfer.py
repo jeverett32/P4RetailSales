@@ -19,5 +19,31 @@ iUserInput = int(input("If you want to import data, enter 1. If you want to see 
 
 if iUserInput == 1 :
     dfRaw = pd.read_excel("Retail_Sales_Data.xlsx")
+#Gets input on what number they want to see
+selected_category = input("\nEnter the category number to view the sales summary: ")
+    #Makes sure it is converted to an interger. 
+    selected_category = int(selected_category)  # Convert input to an integer
+
+    # Ensure the category exists
+    if selected_category > 0 and selected_category <= category_counter:
+        # Get the name of the selected category
+        category_name = the_categories[selected_category - 1]
+
+        # Filter the DataFrame to show only the selected category's data
+        df_filtered = df[df["category"] == category_name]
+
+        # Calculate the sum of total sales (total_price), average sale amount (total_price), and total units sold (quantity_sold)
+        total_sales = df_filtered["total_price"].sum()
+        avg_sale_amount = df_filtered["total_price"].mean()
+        total_units_sold = df_filtered["quantity_sold"].sum()
+
+        # Display the results
+        print(f"\nSales Summary for {category_name}:")
+        print(f"Total Sales: ${total_sales:,.2f}")
+        print(f"Average Sale Amount: ${avg_sale_amount:,.2f}")
+        print(f"Total Units Sold: {total_units_sold}")
+
+    else:
+        print("Invalid category number. Exiting the summary section.")
     
     
