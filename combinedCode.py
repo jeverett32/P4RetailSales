@@ -12,7 +12,7 @@ import matplotlib.pyplot as plot
 
 # Connect to database
 username = 'postgres'
-password = 'Butterfingers24' # ENTER PASSWORD TO TEST!! 
+password = '' # ENTER PASSWORD TO TEST!! 
 host = 'localhost'
 port = '5432'
 database = 'is303'
