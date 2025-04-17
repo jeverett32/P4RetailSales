@@ -4,8 +4,7 @@
 
 # Description: Transfer data into a postgres database and read data programmatically back from the database
 
-# Import necessary libraries 
-import sqlalchemy
+# Import necessary libraries
 from sqlalchemy import create_engine, text
 import pandas as pd
 import matplotlib.pyplot as plot
